@@ -25,7 +25,11 @@ export default (env: { port?: number; mode?: 'production' }) => {
       }),
     ],
     resolve: {
-      extensions: ['.tsx', '.ts', '.js']
+      extensions: ['.tsx', '.ts', '.js'],
+      preferAbsolute: true,
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      mainFiles: ['index'],
+      alias: {},
     },
     output: {
       filename: '[name].[contenthash:8].js',
