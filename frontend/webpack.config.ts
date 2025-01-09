@@ -68,6 +68,18 @@ export default (env: { port?: number; mode?: 'production' }) => {
             "sass-loader",
           ],
         },
+        {
+          test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
+        {
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
+        },
       ]
     },
   }
